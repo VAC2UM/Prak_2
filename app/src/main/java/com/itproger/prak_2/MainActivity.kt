@@ -10,12 +10,12 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        if (savedInstanceState == null) {
-            val fragment1: Fragment1 = Fragment1()
-            val fragmentManager: FragmentManager = supportFragmentManager
-            val fragmentTransaction: FragmentTransaction = fragmentManager.beginTransaction()
-            fragmentTransaction.replace(R.id.fragment_container, fragment1)
-            fragmentTransaction.commit()
-        }
+//        if (savedInstanceState == null) {
+//            val fragment1: Fragment1 = Fragment1()
+//            val fragmentManager: FragmentManager = supportFragmentManager
+//            val fragmentTransaction: FragmentTransaction = fragmentManager.beginTransaction()
+//            fragmentTransaction.replace(R.id.fragment_container, fragment1)
+//            fragmentTransaction.commit()
+//        }
     }
 }
