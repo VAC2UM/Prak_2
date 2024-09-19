@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/fragment1"
-        android:name="com.itproger.prak_2.Fragment1"
+        android:name="com.itproger.prak_2.ui.fragments.Fragment1"
         android:label="Fragment 1"
         tools:layout="@layout/fragment_1">
         <action
@@ -17,7 +17,7 @@
 
     <fragment
         android:id="@+id/fragment2"
-        android:name="com.itproger.prak_2.Fragment2"
+        android:name="com.itproger.prak_2.ui.fragments.Fragment2"
         android:label="Fragment 2"
         tools:layout="@layout/fragment_2">
         <action
@@ -31,7 +31,7 @@
 
     <fragment
         android:id="@+id/fragment3"
-        android:name="com.itproger.prak_2.Fragment3"
+        android:name="com.itproger.prak_2.ui.fragments.Fragment3"
         android:label="Fragment 3"
         tools:layout="@layout/fragment_3">
         <action

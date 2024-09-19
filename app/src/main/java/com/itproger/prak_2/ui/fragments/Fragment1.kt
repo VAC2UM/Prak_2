@@ -1,4 +1,4 @@
-package com.itproger.prak_2
+package com.itproger.prak_2.ui.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -7,38 +7,30 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import androidx.navigation.fragment.findNavController
+import com.itproger.prak_2.R
 
-
-class Fragment2 : Fragment() {
+class Fragment1 : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view = inflater.inflate(R.layout.fragment_2, container, false)
+        val view = inflater.inflate(R.layout.fragment_1, container, false)
+
+        val buttonNext: Button = view.findViewById(R.id.btn_next)
 
         // Ручное управление
-        val buttonNext: Button = view.findViewById(R.id.btn_next)
-        val buttonBack: Button = view.findViewById(R.id.btn_back)
-
 //        buttonNext.setOnClickListener {
-//            val fragment3 = Fragment3()
+//            val fragment2 = Fragment2()
 //            parentFragmentManager.beginTransaction()
-//                .replace(R.id.fragment_container, fragment3)
+//                .replace(R.id.fragment_container, fragment2)
 //                .addToBackStack(null)
 //                .commit()
 //        }
-//        buttonBack.setOnClickListener {
-//            parentFragmentManager.popBackStack()
-//        }
 
+        // Навигация с помощью API
         buttonNext.setOnClickListener {
-            findNavController().navigate(R.id.action_fragment2_to_fragment3)
+            findNavController().navigate(R.id.action_fragment1_to_fragment2)
         }
-
-        buttonBack.setOnClickListener {
-            findNavController().popBackStack()
-        }
-
         return view
     }
 }
