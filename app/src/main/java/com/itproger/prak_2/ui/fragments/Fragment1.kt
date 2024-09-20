@@ -23,6 +23,8 @@
         ): View? {
             binding = Fragment1Binding.inflate(inflater, container, false)
 
+            // ViewModelProvider используется для создания и управления экземплярами viewModel
+            // Для чего нужен: Управление жизненным циклом, Изоляция логики от UI, Упрощение доступа к ViewModel
             viewModel = ViewModelProvider(this).get(FirstFragmentViewModel::class.java)
 
             binding.imageView.setOnClickListener {
