@@ -6,17 +6,33 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.itproger.prak_2.R
+import com.itproger.prak_2.databinding.Fragment1Binding
+import com.itproger.prak_2.viewmodel.FirstFragmentViewModel
 
 class Fragment1 : Fragment() {
+    private lateinit var viewModel: FirstFragmentViewModel
+    private lateinit var binding: Fragment1Binding
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view = inflater.inflate(R.layout.fragment_1, container, false)
+        binding = Fragment1Binding.inflate(inflater, container, false)
 
-        val buttonNext: Button = view.findViewById(R.id.btn_next)
+        viewModel = ViewModelProvider(this).get(FirstFragmentViewModel::class.java)
+
+        binding.imageView.setOnClickListener {
+            viewModel.changeImage()
+        }
+
+        viewModel._currentImage.observe(viewLifecycleOwner,
+            Observer { data ->
+                binding.imageView.setImageResource(data)
+            })
 
         // Ручное управление
 //        buttonNext.setOnClickListener {
@@ -28,9 +44,10 @@ class Fragment1 : Fragment() {
 //        }
 
         // Навигация с помощью API
-        buttonNext.setOnClickListener {
+        binding.btnNext.setOnClickListener {
             findNavController().navigate(R.id.action_fragment1_to_fragment2)
         }
-        return view
+        return binding.root
     }
+
 }
